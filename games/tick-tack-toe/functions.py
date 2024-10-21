@@ -7,15 +7,14 @@ class TickTackToe:
 
     def drawBoard(self):
         # Print the board with row and column labels
-
-        print(f"| {self.board[0][0]} | {self.board[0][1]} | {self.board[0][2]} |")
+        print("| " + self.board[0][0] + " | " + self.board[0][1] + " | " + self.board[0][2] + " |")
         print("   -----------")
-        print(f"| {self.board[1][0]} | {self.board[1][1]} | {self.board[1][2]} |")
+        print("| " + self.board[1][0] + " | " + self.board[1][1] + " | " + self.board[1][2] + " |")
         print("   -----------")
-        print(f"| {self.board[2][0]} | {self.board[2][1]} | {self.board[2][2]} |")
+        print("| " + self.board[2][0] + " | " + self.board[2][1] + " | " + self.board[2][2] + " |")
 
     def move(self, player, cell):
-        # Map cell input (like "a1", "b2") to board indices
+        # Map cell input (like "1", "2", "3" etc.) to board indices
         cell_map = {
             "1": (0, 0), "2": (0, 1), "3": (0, 2),
             "4": (1, 0), "5": (1, 1), "6": (1, 2),
@@ -55,7 +54,3 @@ class TickTackToe:
     def restart(self):
         # Reset the board
         self.board = [[" " for _ in range(3)] for _ in range(3)]
-
-
-# Example usage:
-game = TickTackToe()

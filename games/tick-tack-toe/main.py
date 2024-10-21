@@ -5,7 +5,7 @@ class TickTackToe:
     def drawBoard(self):
         # Print the current state of the board
         for i in range(3):
-            print(f"{self.board[i * 3]} | {self.board[i * 3 + 1]} | {self.board[i * 3 + 2]}")
+            print(self.board[i * 3] + " | " + self.board[i * 3 + 1] + " | " + self.board[i * 3 + 2])
             if i < 2:
                 print("---------")
 
