@@ -1,2 +1,2 @@
-# casio-calc-apps
-scripts for casio calculators that run python
+# Scripts and games for Casio Calculators that run python
+
