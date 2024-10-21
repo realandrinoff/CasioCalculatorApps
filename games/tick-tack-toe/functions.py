@@ -1,156 +1,61 @@
 class TickTackToe:
-    # Start screen
+    def __init__(self):
+        # Initialize the board as a 3x3 list of spaces
+        self.board = [[" " for _ in range(3)] for _ in range(3)]
+        self.player1 = "X"
+        self.player2 = "O"
 
-    # Default layout
-    global a1, a2, a3, b1, b2, b3, c1, c2, c3, player1, player2
-    player1 = "X"
-    player2 = "O"
-    a1 = " "
-    a2 = " "
-    a3 = " "
-    b1 = " "
-    b2 = " "
-    b3 = " "
-    c1 = " "
-    c2 = " "
-    c3 = " "
+    def drawBoard(self):
+        # Print the board with row and column labels
 
-    def drawBoard():
-        print(f"\n\n\n\n\n  | 1 | 2 | 3 |")
-        print(f"A | {a1} | {a2} | {a3} |\n   -----------\nB | {b1} | {b2} | {b3} |\n   -----------\nC | {c1} | {c2} | {c3} |")
-    def checkWin(player): 
-        if a1 == a2 == a3 == player:
-            return True
-        elif b1 == b2 == b3 == player:
-            return True
-        elif c1 == c2 == c3 == player:
-            return True
-        elif a1 == b1 == c1 == player:
-            return True
-        elif a2 == b2 == c2 == player:
-            return True
-        elif a3 == b3 == c3 == player:
-            return True
-        elif a1 == b2 == c3 == player:
-            return True
-        elif a3 == b2 == c1 == player:
-            return True
+        print(f"| {self.board[0][0]} | {self.board[0][1]} | {self.board[0][2]} |")
+        print("   -----------")
+        print(f"| {self.board[1][0]} | {self.board[1][1]} | {self.board[1][2]} |")
+        print("   -----------")
+        print(f"| {self.board[2][0]} | {self.board[2][1]} | {self.board[2][2]} |")
+
+    def move(self, player, cell):
+        # Map cell input (like "a1", "b2") to board indices
+        cell_map = {
+            "1": (0, 0), "2": (0, 1), "3": (0, 2),
+            "4": (1, 0), "5": (1, 1), "6": (1, 2),
+            "7": (2, 0), "8": (2, 1), "9": (2, 2)
+        }
+
+        if cell in cell_map:
+            row, col = cell_map[cell]
+            if self.board[row][col] == " ":  # Check if the cell is empty
+                self.board[row][col] = player
+                return True
+            else:
+                print("Cell already taken")
+                return False
         else:
+            print("Invalid cell input")
             return False
-    def checkDraw():
-        if a1 != " " and a2 != " " and a3 != " " and b1 != " " and b2 != " " and b3 != " " and c1 != " " and c2 != " " and c3 != " ":
+
+    def checkWin(self, player):
+        # Check rows, columns, and diagonals for a win
+        for row in self.board:
+            if all([cell == player for cell in row]):
+                return True
+        for col in range(3):
+            if all([self.board[row][col] == player for row in range(3)]):
+                return True
+        if self.board[0][0] == self.board[1][1] == self.board[2][2] == player:
             return True
-        else:
-            return False
-    def restart(): 
-        global a1, a2, a3, b1, b2, b3, c1, c2, c3
-        a1 = " "
-        a2 = " "
-        a3 = " "
-        b1 = " "
-        b2 = " "
-        b3 = " "
-        c1 = " "
-        c2 = " "
-        c3 = " "
-    def move(player, cell):
-        global a1, a2, a3, b1, b2, b3, c1, c2, c3
-        if cell == "a1":
-            if a1 == " ":
-                a1 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "a2":
-            if a2 == " ":
-                a2 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "a3":
-            if a3 == " ":
-                a3 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "b1":
-            if b1 == " ":
-                b1 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "b2":
-            if b2 == " ":
-                b2 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "b3":
-            if b3 == " ":
-                b3 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "c1":
-            if c1 == " ":
-                c1 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "c2":
-            if c2 == " ":
-                c2 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "c3":
-            if c3 == " ":
-                c3 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-def move2(player, cell):
-        if cell == "a1":
-            if a1 == " ":
-                a1 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "a2":
-            if a2 == " ":
-                a2 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "a3":
-            if a3 == " ":
-                a3 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "b1":
-            if b1 == " ":
-                b1 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
-        if cell == "b2":
-            if b2 == " ":
-                b2 = player
-                return True
-            else:
-                print("Cell already taken")
-                return False
+        if self.board[0][2] == self.board[1][1] == self.board[2][0] == player:
+            return True
+        return False
+
+    def checkDraw(self):
+        # Check if all cells are filled and there's no winner
+        return all(cell != " " for row in self.board for cell in row)
+
+    def restart(self):
+        # Reset the board
+        self.board = [[" " for _ in range(3)] for _ in range(3)]
+
+
+# Example usage:
+game = TickTackToe()
