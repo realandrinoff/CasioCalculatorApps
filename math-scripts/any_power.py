@@ -12,7 +12,6 @@ class AnyPower:
 def main():
     while True:
         try:
-            
             answer = int(input('\n\n\n\nType 1 to start \nType 2 to exit\nType 3 for credits\n'))
             if answer == 1:
                 initial_number = int(input("Enter the initial number: \n"))
@@ -26,7 +25,6 @@ def main():
                 print("Credits: Made by You!")
         except ValueError:
             print("Write a number")
-        
 main()
 print("Thank you")
     
