@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-in_development-white)]()
+[![Status](https://img.shields.io/badge/status-in_development-red)]()
 [![Version](https://img.shields.io/badge/version-1.1-green)](https://github.com/realandrinoff/casio-calc-apps/releases/)
 
 
