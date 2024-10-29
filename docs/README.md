@@ -1,7 +1,7 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-in_development-white)]()
-[![Version](https://img.shields.io/badge/version-1.0-green)](https://github.com/realandrinoff/casio-calc-apps/releases/tag/1.0)
+[![Version](https://img.shields.io/badge/version-1.1-green)](https://github.com/realandrinoff/casio-calc-apps/releases/)
 
 
 </div>
